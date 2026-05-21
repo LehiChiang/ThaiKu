@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "words": {
+    "สวัสดี": {
+      "pronunciation": "sa-was-dee",
+      "meaning": "你好",
+      "partOfSpeech": "interj.",
+      "usage": "泰语中最常用的问候语，可全天使用",
+      "examples": [
+        {
+          "sceneId": "lesson_01",
+          "sentence": "สวัสดีครับ",
+          "translation": "你好"
+        },
+        {
+          "sceneId": "lesson_01",
+          "sentence": "สวัสดีค่ะ",
+          "translation": "你好（女性用语）"
+        }
+      ]
+    },
+    "ครับ": {
+      "pronunciation": "khrap",
+      "meaning": "（男性礼貌语气词）",
+      "partOfSpeech": "particle",
+      "usage": "男性在句尾使用的礼貌助词，表示尊敬",
+      "examples": [
+        {
+          "sceneId": "lesson_01",
+          "sentence": "สวัสดีครับ",
+          "translation": "你好"
+        },
+        {
+          "sceneId": "lesson_02",
+          "sentence": "ขอบคุณครับ",
+          "translation": "谢谢"
+        }
+      ]
+    },
+    "ขอบคุณ": {
+      "pronunciation": "khop-khun",
+      "meaning": "谢谢",
+      "partOfSpeech": "interj.",
+      "usage": "表示感谢的常用语",
+      "examples": [
+        {
+          "sceneId": "lesson_02",
+          "sentence": "ขอบคุณครับ",
+          "translation": "谢谢"
+        }
+      ]
+    },
+    "ดีมาก": {
+      "pronunciation": "dee-mak",
+      "meaning": "非常好",
+      "partOfSpeech": "adj.",
+      "usage": "表示赞赏或肯定",
+      "examples": [
+        {
+          "sceneId": "lesson_01",
+          "sentence": "อาหารดีมาก",
+          "translation": "食物很好吃"
+        }
+      ]
+    }
+  }
+}

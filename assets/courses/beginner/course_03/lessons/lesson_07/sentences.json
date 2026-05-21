@@ -1,0 +1,50 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "หนึ่ง สอง สาม",
+      "translation": "一二三",
+      "wordRefs": [
+        { "word": "หนึ่ง", "start": 0, "end": 4 },
+        { "word": "สอง", "start": 5, "end": 8 },
+        { "word": "สาม", "start": 9, "end": 12 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "สี่ ห้า หก",
+      "translation": "四五六",
+      "wordRefs": [
+        { "word": "สี่", "start": 0, "end": 3 },
+        { "word": "ห้า", "start": 4, "end": 7 },
+        { "word": "หก", "start": 8, "end": 10 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "เจ็ด แปด เก้า",
+      "translation": "七八九",
+      "wordRefs": [
+        { "word": "เจ็ด", "start": 0, "end": 4 },
+        { "word": "แปด", "start": 5, "end": 8 },
+        { "word": "เก้า", "start": 9, "end": 12 }
+      ]
+    },
+    {
+      "id": "s4",
+      "startTime": 12000,
+      "endTime": 16000,
+      "text": "สิบ",
+      "translation": "十",
+      "wordRefs": [
+        { "word": "สิบ", "start": 0, "end": 4 }
+      ]
+    }
+  ]
+}

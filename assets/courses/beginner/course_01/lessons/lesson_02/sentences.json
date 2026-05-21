@@ -1,0 +1,66 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "อยากไปเที่ยวไทย",
+      "translation": "想去泰国旅游",
+      "wordRefs": [
+        { "word": "อยาก", "start": 0, "end": 3 },
+        { "word": "ไป", "start": 4, "end": 5 },
+        { "word": "เที่ยว", "start": 6, "end": 9 },
+        { "word": "ไทย", "start": 10, "end": 12 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "สนามบินอยู่ที่ไหน",
+      "translation": "机场在哪里",
+      "wordRefs": [
+        { "word": "สนามบิน", "start": 0, "end": 5 },
+        { "word": "อยู่", "start": 6, "end": 8 },
+        { "word": "ที่ไหน", "start": 9, "end": 13 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "ขอตั๋วเครื่องบินหน่อย",
+      "translation": "请给我机票",
+      "wordRefs": [
+        { "word": "ขอ", "start": 0, "end": 2 },
+        { "word": "ตั๋ว", "start": 3, "end": 5 },
+        { "word": "เครื่องบิน", "start": 6, "end": 12 },
+        { "word": "หน่อย", "start": 13, "end": 16 }
+      ]
+    },
+    {
+      "id": "s4",
+      "startTime": 12000,
+      "endTime": 16000,
+      "text": "รถแท็กซี่ไปสนามบินไหม",
+      "translation": "出租车去机场吗",
+      "wordRefs": [
+        { "word": "รถแท็กซี่", "start": 0, "end": 6 },
+        { "word": "ไป", "start": 7, "end": 8 },
+        { "word": "สนามบิน", "start": 9, "end": 14 },
+        { "word": "ไหม", "start": 15, "end": 17 }
+      ]
+    },
+    {
+      "id": "s5",
+      "startTime": 16000,
+      "endTime": 20000,
+      "text": "เที่ยวบินกี่โมง",
+      "translation": "航班几点",
+      "wordRefs": [
+        { "word": "เที่ยวบิน", "start": 0, "end": 5 },
+        { "word": "กี่โมง", "start": 6, "end": 10 }
+      ]
+    }
+  ]
+}

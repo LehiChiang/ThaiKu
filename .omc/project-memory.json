@@ -1,0 +1,131 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1779378035596,
+  "projectRoot": "/Users/jianglihao/ios/ThaiKu",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "react",
+        "version": "18.2.0",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "npm run start",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets",
+      "src"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 6,
+      "lastAccessed": 1779378035584,
+      "keyFiles": [
+        "adaptive-icon.png",
+        "dictionary.json",
+        "favicon.png",
+        "icon.png",
+        "index.json"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 1,
+      "lastAccessed": 1779378035586,
+      "keyFiles": [
+        "types.d.ts"
+      ]
+    },
+    "src/types": {
+      "path": "src/types",
+      "purpose": "Type definitions",
+      "fileCount": 1,
+      "lastAccessed": 1779378035586,
+      "keyFiles": [
+        "index.ts"
+      ]
+    },
+    "src/utils": {
+      "path": "src/utils",
+      "purpose": "Utility functions",
+      "fileCount": 1,
+      "lastAccessed": 1779378035587,
+      "keyFiles": [
+        "lessonData.ts"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/screens/VocabScreen.tsx",
+      "accessCount": 40,
+      "lastAccessed": 1779379488568,
+      "type": "file"
+    },
+    {
+      "path": "src/database/index.ts",
+      "accessCount": 6,
+      "lastAccessed": 1779379989469,
+      "type": "file"
+    },
+    {
+      "path": "src/types/index.ts",
+      "accessCount": 2,
+      "lastAccessed": 1779379392691,
+      "type": "file"
+    },
+    {
+      "path": "src/screens/LearningScreen.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1779378380346,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

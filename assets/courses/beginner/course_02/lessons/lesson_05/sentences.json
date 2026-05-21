@@ -1,0 +1,50 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "ฉันชื่อ...",
+      "translation": "我叫...",
+      "wordRefs": [
+        { "word": "ฉัน", "start": 0, "end": 3 },
+        { "word": "ชื่อ", "start": 4, "end": 7 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ฉันมาจากจีน",
+      "translation": "我来自中国",
+      "wordRefs": [
+        { "word": "ฉัน", "start": 0, "end": 3 },
+        { "word": "มาจาก", "start": 4, "end": 8 },
+        { "word": "จีน", "start": 9, "end": 11 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "อยากเรียนภาษาไทย",
+      "translation": "想学泰语",
+      "wordRefs": [
+        { "word": "อยาก", "start": 0, "end": 3 },
+        { "word": "เรียน", "start": 4, "end": 8 },
+        { "word": "ภาษาไทย", "start": 9, "end": 15 }
+      ]
+    },
+    {
+      "id": "s4",
+      "startTime": 12000,
+      "endTime": 16000,
+      "text": "ยินดีที่ได้รู้จัก",
+      "translation": "很高兴认识你",
+      "wordRefs": [
+        { "word": "ยินดี", "start": 0, "end": 4 },
+        { "word": "ที่ได้รู้จัก", "start": 5, "end": 14 }
+      ]
+    }
+  ]
+}

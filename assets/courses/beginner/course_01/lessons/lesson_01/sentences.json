@@ -1,0 +1,73 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "สวัสดีค่ะ",
+      "translation": "你好（女）",
+      "wordRefs": [
+        { "word": "สวัสดี", "start": 0, "end": 4 },
+        { "word": "ค่ะ", "start": 5, "end": 7 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "สวัสดีครับ",
+      "translation": "你好（男）",
+      "wordRefs": [
+        { "word": "สวัสดี", "start": 0, "end": 4 },
+        { "word": "ครับ", "start": 5, "end": 7 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "สบายดีไหมครับ",
+      "translation": "你好吗（男）",
+      "wordRefs": [
+        { "word": "สบายดี", "start": 0, "end": 4 },
+        { "word": "ไหม", "start": 5, "end": 7 },
+        { "word": "ครับ", "start": 8, "end": 10 }
+      ]
+    },
+    {
+      "id": "s4",
+      "startTime": 12000,
+      "endTime": 16000,
+      "text": "สบายดีค่ะ",
+      "translation": "你好（女）",
+      "wordRefs": [
+        { "word": "สบายดี", "start": 0, "end": 4 },
+        { "word": "ค่ะ", "start": 5, "end": 7 }
+      ]
+    },
+    {
+      "id": "s5",
+      "startTime": 16000,
+      "endTime": 20000,
+      "text": "ขอบคุณครับ",
+      "translation": "谢谢（男）",
+      "wordRefs": [
+        { "word": "ขอบ", "start": 0, "end": 2 },
+        { "word": "คุณ", "start": 3, "end": 5 },
+        { "word": "ครับ", "start": 6, "end": 8 }
+      ]
+    },
+    {
+      "id": "s6",
+      "startTime": 20000,
+      "endTime": 24000,
+      "text": "ขอบคุณค่ะ",
+      "translation": "谢谢（女）",
+      "wordRefs": [
+        { "word": "ขอบ", "start": 0, "end": 2 },
+        { "word": "คุณ", "start": 3, "end": 5 },
+        { "word": "ค่ะ", "start": 6, "end": 8 }
+      ]
+    }
+  ]
+}

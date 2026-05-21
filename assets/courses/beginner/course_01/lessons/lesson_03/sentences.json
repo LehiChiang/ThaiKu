@@ -1,0 +1,53 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "นี่ราคาเท่าไหร่",
+      "translation": "这个多少钱",
+      "wordRefs": [
+        { "word": "นี่", "start": 0, "end": 2 },
+        { "word": "ราคา", "start": 3, "end": 6 },
+        { "word": "เท่าไหร่", "start": 7, "end": 12 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "มีของอะไรขายบ้าง",
+      "translation": "都卖些什么",
+      "wordRefs": [
+        { "word": "มี", "start": 0, "end": 2 },
+        { "word": "ของ", "start": 3, "end": 6 },
+        { "word": "อะไร", "start": 7, "end": 10 },
+        { "word": "ขายบ้าง", "start": 11, "end": 15 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "ขอลดราคาได้ไหม",
+      "translation": "可以打折吗",
+      "wordRefs": [
+        { "word": "ขอ", "start": 0, "end": 2 },
+        { "word": "ลด", "start": 3, "end": 5 },
+        { "word": "ราคา", "start": 6, "end": 9 },
+        { "word": "ได้ไหม", "start": 10, "end": 14 }
+      ]
+    },
+    {
+      "id": "s4",
+      "startTime": 12000,
+      "endTime": 16000,
+      "text": "ถูกแล้ว",
+      "translation": "便宜了",
+      "wordRefs": [
+        { "word": "ถูก", "start": 0, "end": 3 },
+        { "word": "แล้ว", "start": 4, "end": 8 }
+      ]
+    }
+  ]
+}

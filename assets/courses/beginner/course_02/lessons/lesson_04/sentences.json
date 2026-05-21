@@ -1,0 +1,60 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "สวัสดีตอนเช้า",
+      "translation": "早上好",
+      "wordRefs": [
+        { "word": "สวัสดี", "start": 0, "end": 4 },
+        { "word": "ตอนเช้า", "start": 5, "end": 9 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "สวัสดีตอนบ่าย",
+      "translation": "下午好",
+      "wordRefs": [
+        { "word": "สวัสดี", "start": 0, "end": 4 },
+        { "word": "ตอนบ่าย", "start": 5, "end": 9 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "สวัสดีตอนเย็น",
+      "translation": "晚上好",
+      "wordRefs": [
+        { "word": "สวัสดี", "start": 0, "end": 4 },
+        { "word": "ตอนเย็น", "start": 5, "end": 9 }
+      ]
+    },
+    {
+      "id": "s4",
+      "startTime": 12000,
+      "endTime": 16000,
+      "text": "ราตรีสวัสดิ์",
+      "translation": "晚安",
+      "wordRefs": [
+        { "word": "ราตรี", "start": 0, "end": 4 },
+        { "word": "สวัสดิ์", "start": 5, "end": 9 }
+      ]
+    },
+    {
+      "id": "s5",
+      "startTime": 16000,
+      "endTime": 20000,
+      "text": "ไปก่อนนะ",
+      "translation": "先走了",
+      "wordRefs": [
+        { "word": "ไป", "start": 0, "end": 2 },
+        { "word": "ก่อน", "start": 3, "end": 6 },
+        { "word": "นะ", "start": 7, "end": 9 }
+      ]
+    }
+  ]
+}

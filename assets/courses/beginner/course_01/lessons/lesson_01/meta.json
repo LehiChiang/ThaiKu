@@ -1,0 +1,11 @@
+{
+  "id": "lesson_01",
+  "courseId": "course_01",
+  "title": "日常生活场景",
+  "scene": "life",
+  "description": "学习日常生活中常用的泰语表达",
+  "mediaFile": "life_scenario.mp4",
+  "mediaType": "video",
+  "duration": 45,
+  "tags": ["生活", "日常"]
+}

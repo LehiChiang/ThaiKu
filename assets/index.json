@@ -1,0 +1,363 @@
+{
+  "version": "1.0",
+  "levels": [
+    {
+      "id": "beginner",
+      "title": "初级",
+      "description": "适合零基础学习者，从发音和基础会话开始",
+      "courses": [
+        {
+          "id": "course_01",
+          "title": "日常会话入门",
+          "type": "video",
+          "thumbnail": "course_01_thumb.jpg",
+          "lessons": [
+            {
+              "id": "lesson_01",
+              "title": "日常生活场景",
+              "scene": "life",
+              "duration": 45,
+              "thumbnail": "lesson_01_thumb.jpg"
+            },
+            {
+              "id": "lesson_02",
+              "title": "旅行场景",
+              "scene": "travel",
+              "duration": 50,
+              "thumbnail": "lesson_02_thumb.jpg"
+            },
+            {
+              "id": "lesson_03",
+              "title": "购物场景",
+              "scene": "shopping",
+              "duration": 40,
+              "thumbnail": "lesson_03_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_02",
+          "title": "问候与介绍",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_04",
+              "title": "基础问候语",
+              "scene": "greeting",
+              "duration": 35,
+              "thumbnail": "lesson_04_thumb.jpg"
+            },
+            {
+              "id": "lesson_05",
+              "title": "自我介绍",
+              "scene": "introduction",
+              "duration": 40,
+              "thumbnail": "lesson_05_thumb.jpg"
+            },
+            {
+              "id": "lesson_06",
+              "title": "询问与回答",
+              "scene": "question",
+              "duration": 45,
+              "thumbnail": "lesson_06_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_03",
+          "title": "数字与时间",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_07",
+              "title": "数字1-10",
+              "scene": "numbers",
+              "duration": 30,
+              "thumbnail": "lesson_07_thumb.jpg"
+            },
+            {
+              "id": "lesson_08",
+              "title": "数字11-100",
+              "scene": "numbers",
+              "duration": 35,
+              "thumbnail": "lesson_08_thumb.jpg"
+            },
+            {
+              "id": "lesson_09",
+              "title": "时间表达",
+              "scene": "time",
+              "duration": 40,
+              "thumbnail": "lesson_09_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_04",
+          "title": "食物与餐饮",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_10",
+              "title": "常见食物名称",
+              "scene": "food",
+              "duration": 38,
+              "thumbnail": "lesson_10_thumb.jpg"
+            },
+            {
+              "id": "lesson_11",
+              "title": "餐厅点餐",
+              "scene": "restaurant",
+              "duration": 45,
+              "thumbnail": "lesson_11_thumb.jpg"
+            },
+            {
+              "id": "lesson_12",
+              "title": "表达喜好",
+              "scene": "preference",
+              "duration": 35,
+              "thumbnail": "lesson_12_thumb.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intermediate",
+      "title": "中级",
+      "description": "适合有一定基础的学习者，深入学习日常交流",
+      "courses": [
+        {
+          "id": "course_05",
+          "title": "旅行交流",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_13",
+              "title": "机场与交通",
+              "scene": "travel",
+              "duration": 50,
+              "thumbnail": "lesson_13_thumb.jpg"
+            },
+            {
+              "id": "lesson_14",
+              "title": "酒店入住",
+              "scene": "hotel",
+              "duration": 45,
+              "thumbnail": "lesson_14_thumb.jpg"
+            },
+            {
+              "id": "lesson_15",
+              "title": "问路导航",
+              "scene": "direction",
+              "duration": 40,
+              "thumbnail": "lesson_15_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_06",
+          "title": "工作与学习",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_16",
+              "title": "面试自我介绍",
+              "scene": "work",
+              "duration": 55,
+              "thumbnail": "lesson_16_thumb.jpg"
+            },
+            {
+              "id": "lesson_17",
+              "title": "工作会议",
+              "scene": "meeting",
+              "duration": 50,
+              "thumbnail": "lesson_17_thumb.jpg"
+            },
+            {
+              "id": "lesson_18",
+              "title": "学校生活",
+              "scene": "school",
+              "duration": 45,
+              "thumbnail": "lesson_18_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_07",
+          "title": "社交娱乐",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_19",
+              "title": "约会聚会",
+              "scene": "social",
+              "duration": 48,
+              "thumbnail": "lesson_19_thumb.jpg"
+            },
+            {
+              "id": "lesson_20",
+              "title": "休闲娱乐",
+              "scene": "entertainment",
+              "duration": 42,
+              "thumbnail": "lesson_20_thumb.jpg"
+            },
+            {
+              "id": "lesson_21",
+              "title": "网络社交",
+              "scene": "internet",
+              "duration": 40,
+              "thumbnail": "lesson_21_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_08",
+          "title": "健康医疗",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_22",
+              "title": "身体部位",
+              "scene": "health",
+              "duration": 35,
+              "thumbnail": "lesson_22_thumb.jpg"
+            },
+            {
+              "id": "lesson_23",
+              "title": "看病就医",
+              "scene": "hospital",
+              "duration": 50,
+              "thumbnail": "lesson_23_thumb.jpg"
+            },
+            {
+              "id": "lesson_24",
+              "title": "药店买药",
+              "scene": "pharmacy",
+              "duration": 40,
+              "thumbnail": "lesson_24_thumb.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "title": "高级",
+      "description": "适合进阶学习者，深入讨论复杂话题",
+      "courses": [
+        {
+          "id": "course_09",
+          "title": "商务泰语",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_25",
+              "title": "商务谈判",
+              "scene": "business",
+              "duration": 60,
+              "thumbnail": "lesson_25_thumb.jpg"
+            },
+            {
+              "id": "lesson_26",
+              "title": "合同条款",
+              "scene": "contract",
+              "duration": 55,
+              "thumbnail": "lesson_26_thumb.jpg"
+            },
+            {
+              "id": "lesson_27",
+              "title": "商务演讲",
+              "scene": "presentation",
+              "duration": 58,
+              "thumbnail": "lesson_27_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_10",
+          "title": "文化与社会",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_28",
+              "title": "传统节日",
+              "scene": "culture",
+              "duration": 50,
+              "thumbnail": "lesson_28_thumb.jpg"
+            },
+            {
+              "id": "lesson_29",
+              "title": "佛教文化",
+              "scene": "religion",
+              "duration": 55,
+              "thumbnail": "lesson_29_thumb.jpg"
+            },
+            {
+              "id": "lesson_30",
+              "title": "社会现象讨论",
+              "scene": "society",
+              "duration": 60,
+              "thumbnail": "lesson_30_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_11",
+          "title": "新闻与媒体",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_31",
+              "title": "新闻播报",
+              "scene": "news",
+              "duration": 55,
+              "thumbnail": "lesson_31_thumb.jpg"
+            },
+            {
+              "id": "lesson_32",
+              "title": "电视节目",
+              "scene": "tv",
+              "duration": 50,
+              "thumbnail": "lesson_32_thumb.jpg"
+            },
+            {
+              "id": "lesson_33",
+              "title": "社交媒体",
+              "scene": "media",
+              "duration": 48,
+              "thumbnail": "lesson_33_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_12",
+          "title": "文学与艺术",
+          "type": "video",
+          "lessons": [
+            {
+              "id": "lesson_34",
+              "title": "古典文学",
+              "scene": "literature",
+              "duration": 60,
+              "thumbnail": "lesson_34_thumb.jpg"
+            },
+            {
+              "id": "lesson_35",
+              "title": "现代诗歌",
+              "scene": "poetry",
+              "duration": 55,
+              "thumbnail": "lesson_35_thumb.jpg"
+            },
+            {
+              "id": "lesson_36",
+              "title": "艺术鉴赏",
+              "scene": "art",
+              "duration": 52,
+              "thumbnail": "lesson_36_thumb.jpg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

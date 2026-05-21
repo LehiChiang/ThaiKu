@@ -1,0 +1,47 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "ข้าวมันไก่",
+      "translation": "米饭鸡肉",
+      "wordRefs": [
+        { "word": "ข้าว", "start": 0, "end": 4 },
+        { "word": "มัน", "start": 5, "end": 7 },
+        { "word": "ไก่", "start": 8, "end": 11 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ต้มยำกุ้ง",
+      "translation": "冬阴功汤",
+      "wordRefs": [
+        { "word": "ต้มยำ", "start": 0, "end": 6 },
+        { "word": "กุ้ง", "start": 7, "end": 11 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "ผัดไทย",
+      "translation": "泰式炒河粉",
+      "wordRefs": [
+        { "word": "ผัดไทย", "start": 0, "end": 7 }
+      ]
+    },
+    {
+      "id": "s4",
+      "startTime": 12000,
+      "endTime": 16000,
+      "text": "ก๋วยเตี๋ยว",
+      "translation": "泰式面条",
+      "wordRefs": [
+        { "word": "ก๋วยเตี๋ยว", "start": 0, "end": 8 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "ตอนนี้กี่โมง",
+      "translation": "现在几点",
+      "wordRefs": [
+        { "word": "ตอนนี้", "start": 0, "end": 5 },
+        { "word": "กี่โมง", "start": 6, "end": 11 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ตอนเช้า บ่าย เย็น",
+      "translation": "早午晚",
+      "wordRefs": [
+        { "word": "ตอนเช้า", "start": 0, "end": 7 },
+        { "word": "บ่าย", "start": 8, "end": 11 },
+        { "word": "เย็น", "start": 12, "end": 15 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "วันนี้วันอะไร",
+      "translation": "今天星期几",
+      "wordRefs": [
+        { "word": "วันนี้", "start": 0, "end": 4 },
+        { "word": "วัน", "start": 5, "end": 7 },
+        { "word": "อะไร", "start": 8, "end": 12 }
+      ]
+    },
+    {
+      "id": "s4",
+      "startTime": 12000,
+      "endTime": 16000,
+      "text": "วันพรุ่งนี้",
+      "translation": "明天",
+      "wordRefs": [
+        { "word": "วัน", "start": 0, "end": 3 },
+        { "word": "พรุ่งนี้", "start": 4, "end": 10 }
+      ]
+    }
+  ]
+}
