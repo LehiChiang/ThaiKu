@@ -109,21 +109,75 @@
       "type": "file"
     },
     {
+      "path": "src/screens/LearningScreen.tsx",
+      "accessCount": 14,
+      "lastAccessed": 1779445034751,
+      "type": "file"
+    },
+    {
       "path": "src/database/index.ts",
-      "accessCount": 6,
-      "lastAccessed": 1779379989469,
+      "accessCount": 7,
+      "lastAccessed": 1779446099738,
       "type": "file"
     },
     {
       "path": "src/types/index.ts",
-      "accessCount": 2,
-      "lastAccessed": 1779379392691,
+      "accessCount": 3,
+      "lastAccessed": 1779444176264,
       "type": "file"
     },
     {
-      "path": "src/screens/LearningScreen.tsx",
+      "path": "src/utils/lessonData.ts",
+      "accessCount": 3,
+      "lastAccessed": 1779446492455,
+      "type": "file"
+    },
+    {
+      "path": "src/screens/CourseScreen.tsx",
       "accessCount": 1,
-      "lastAccessed": 1779378380346,
+      "lastAccessed": 1779444143729,
+      "type": "file"
+    },
+    {
+      "path": "src/screens/LessonListScreen.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1779444163378,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_01/lessons/lesson_01/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779444347254,
+      "type": "file"
+    },
+    {
+      "path": "assets/dictionary.json",
+      "accessCount": 1,
+      "lastAccessed": 1779446093964,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_02/lessons/lesson_13/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779446439470,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_04/lessons/lesson_19/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779446439835,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_04/lessons/lesson_20/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779446440120,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_04/lessons/lesson_21/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779446440361,
       "type": "file"
     }
   ],

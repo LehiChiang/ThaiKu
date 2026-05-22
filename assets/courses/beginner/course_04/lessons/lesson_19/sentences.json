@@ -1,0 +1,46 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 3000,
+      "text": "อยากไปดูหนังกันไหม",
+      "translation": "想一起看电影吗",
+      "wordRefs": [
+        { "word": "อยาก", "start": 0, "end": 3 },
+        { "word": "ไป", "start": 4, "end": 6 },
+        { "word": "ดู", "start": 7, "end": 9 },
+        { "word": "หนัง", "start": 10, "end": 14 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 3000,
+      "endTime": 6000,
+      "text": "เจอกันตรงเวลาไหน",
+      "translation": "什么时候见面",
+      "wordRefs": [
+        { "word": "เจอ", "start": 0, "end": 2 },
+        { "word": "กัน", "start": 3, "end": 5 },
+        { "word": "ตรง", "start": 6, "end": 8 },
+        { "word": "เวลา", "start": 9, "end": 13 },
+        { "word": "ไหน", "start": 14, "end": 17 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 6000,
+      "endTime": 9000,
+      "text": "รอที่หน้าโรงหนังได้ไหม",
+      "translation": "可以在电影院前等吗",
+      "wordRefs": [
+        { "word": "รอ", "start": 0, "end": 2 },
+        { "word": "ที่", "start": 3, "end": 5 },
+        { "word": "หน้า", "start": 6, "end": 10 },
+        { "word": "โรงหนัง", "start": 11, "end": 17 },
+        { "word": "ได้", "start": 18, "end": 21 },
+        { "word": "ไหม", "start": 22, "end": 25 }
+      ]
+    }
+  ]
+}

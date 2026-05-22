@@ -1,0 +1,44 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 3000,
+      "text": "เฟสบุ๊คไอดีคืออะไร",
+      "translation": "你的Facebook ID是什么",
+      "wordRefs": [
+        { "word": "เฟสบุ๊ค", "start": 0, "end": 7 },
+        { "word": "ไอดี", "start": 8, "end": 13 },
+        { "word": "คือ", "start": 14, "end": 17 },
+        { "word": "อะไร", "start": 18, "end": 23 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 3000,
+      "endTime": 6000,
+      "text": "ติดตามไลน์ได้ไหม",
+      "translation": "可以加LINE吗",
+      "wordRefs": [
+        { "word": "ติดตาม", "start": 0, "end": 6 },
+        { "word": "ไลน์", "start": 7, "end": 12 },
+        { "word": "ได้", "start": 13, "end": 16 },
+        { "word": "ไหม", "start": 17, "end": 20 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 6000,
+      "endTime": 9000,
+      "text": "ส่งรูปให้ดูหน่อย",
+      "translation": "发张照片看看",
+      "wordRefs": [
+        { "word": "ส่ง", "start": 0, "end": 3 },
+        { "word": "รูป", "start": 4, "end": 7 },
+        { "word": "ให้", "start": 8, "end": 11 },
+        { "word": "ดู", "start": 12, "end": 14 },
+        { "word": "หน่อย", "start": 15, "end": 19 }
+      ]
+    }
+  ]
+}

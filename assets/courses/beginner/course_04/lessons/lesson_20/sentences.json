@@ -1,0 +1,44 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 3000,
+      "text": "ชอบฟังเพลงไทย",
+      "translation": "喜欢听泰国音乐",
+      "wordRefs": [
+        { "word": "ชอบ", "start": 0, "end": 3 },
+        { "word": "ฟัง", "start": 4, "end": 7 },
+        { "word": "เพลง", "start": 8, "end": 12 },
+        { "word": "ไทย", "start": 13, "end": 17 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 3000,
+      "endTime": 6000,
+      "text": "ดูละครได้เป็นไหม",
+      "translation": "会看泰剧吗",
+      "wordRefs": [
+        { "word": "ดู", "start": 0, "end": 2 },
+        { "word": "ละคร", "start": 3, "end": 7 },
+        { "word": "ได้", "start": 8, "end": 11 },
+        { "word": "เป็น", "start": 12, "end": 15 },
+        { "word": "ไหม", "start": 16, "end": 19 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 6000,
+      "endTime": 9000,
+      "text": "เล่นเกมด้วยกัน",
+      "translation": "一起玩游戏吧",
+      "wordRefs": [
+        { "word": "เล่น", "start": 0, "end": 4 },
+        { "word": "เกม", "start": 5, "end": 9 },
+        { "word": "ด้วย", "start": 10, "end": 14 },
+        { "word": "กัน", "start": 15, "end": 18 }
+      ]
+    }
+  ]
+}

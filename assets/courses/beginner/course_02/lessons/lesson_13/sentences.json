@@ -1,0 +1,43 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 3000,
+      "text": "สนามบินสุวรรณภูมิอยู่ไกลไหม",
+      "translation": "素万那普机场远吗",
+      "wordRefs": [
+        { "word": "สนามบิน", "start": 0, "end": 6 },
+        { "word": "อยู่", "start": 7, "end": 9 },
+        { "word": "ไกล", "start": 10, "end": 13 },
+        { "word": "ไหม", "start": 14, "end": 17 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 3000,
+      "endTime": 6000,
+      "text": "ขอตั๋วไปภูเก็ต",
+      "translation": "要买去普吉岛的票",
+      "wordRefs": [
+        { "word": "ขอ", "start": 0, "end": 2 },
+        { "word": "ตั๋ว", "start": 3, "end": 6 },
+        { "word": "ไป", "start": 7, "end": 9 },
+        { "word": "ภูเก็ต", "start": 10, "end": 15 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 6000,
+      "endTime": 9000,
+      "text": "เที่ยวบินออกเวลาไหน",
+      "translation": "航班几点起飞",
+      "wordRefs": [
+        { "word": "เที่ยวบิน", "start": 0, "end": 6 },
+        { "word": "ออก", "start": 7, "end": 9 },
+        { "word": "เวลา", "start": 10, "end": 14 },
+        { "word": "ไหน", "start": 15, "end": 18 }
+      ]
+    }
+  ]
+}
