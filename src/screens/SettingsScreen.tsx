@@ -9,13 +9,14 @@ import {
 } from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
+import { Paths } from 'expo-file-system';
 import { exportDatabase } from '../database';
 
 export default function SettingsScreen() {
   const handleBackup = async () => {
     try {
       const data = await exportDatabase();
-      const fileUri = `${FileSystem.documentDirectory}thaiku_backup_${new Date().toISOString().split('T')[0]}.json`;
+      const fileUri = Paths.document + `thaiku_backup_${new Date().toISOString().split('T')[0]}.json`;
       await FileSystem.writeAsStringAsync(fileUri, data);
 
       if (await Sharing.isAvailableAsync()) {

@@ -118,6 +118,67 @@
               "thumbnail": "lesson_12_thumb.jpg"
             }
           ]
+        },
+        {
+          "id": "course_audio_01",
+          "title": "泰语听力训练",
+          "type": "audio",
+          "thumbnail": "audio_course_01_thumb.jpg",
+          "lessons": [
+            {
+              "id": "lesson_audio_01",
+              "title": "日常对话听力",
+              "scene": "listening",
+              "duration": 30,
+              "audioUrl": "https://sample-videos.com/audio/mp3/crowd-cheering.mp3",
+              "audioCover": "https://via.placeholder.com/400x400/4CAF50/FFFFFF?text=听力1"
+            },
+            {
+              "id": "lesson_audio_02",
+              "title": "旅行对话听力",
+              "scene": "listening",
+              "duration": 35,
+              "audioUrl": "https://sample-videos.com/audio/mp3/crowd-cheering.mp3",
+              "audioCover": "https://via.placeholder.com/400x400/4CAF50/FFFFFF?text=听力2"
+            },
+            {
+              "id": "lesson_audio_03",
+              "title": "购物对话听力",
+              "scene": "listening",
+              "duration": 28,
+              "audioUrl": "https://sample-videos.com/audio/mp3/crowd-cheering.mp3",
+              "audioCover": "https://via.placeholder.com/400x400/4CAF50/FFFFFF?text=听力3"
+            }
+          ]
+        },
+        {
+          "id": "course_doc_01",
+          "title": "泰语语法基础",
+          "type": "document",
+          "thumbnail": "doc_course_01_thumb.jpg",
+          "lessons": [
+            {
+              "id": "lesson_doc_01",
+              "title": "基本句子结构",
+              "scene": "grammar",
+              "duration": 25,
+              "documentUrl": "assets/courses/beginner/course_doc_01/lessons/lesson_doc_01/content.md"
+            },
+            {
+              "id": "lesson_doc_02",
+              "title": "时态表达",
+              "scene": "grammar",
+              "duration": 30,
+              "documentUrl": "assets/courses/beginner/course_doc_01/lessons/lesson_doc_02/content.md"
+            },
+            {
+              "id": "lesson_doc_03",
+              "title": "疑问句构造",
+              "scene": "grammar",
+              "duration": 22,
+              "documentUrl": "assets/courses/beginner/course_doc_01/lessons/lesson_doc_03/content.md"
+            }
+          ]
         }
       ]
     },
@@ -237,6 +298,30 @@
               "thumbnail": "lesson_24_thumb.jpg"
             }
           ]
+        },
+        {
+          "id": "course_audio_02",
+          "title": "中级听力训练",
+          "type": "audio",
+          "thumbnail": "audio_course_02_thumb.jpg",
+          "lessons": [
+            {
+              "id": "lesson_audio_04",
+              "title": "工作场景听力",
+              "scene": "listening",
+              "duration": 40,
+              "audioUrl": "https://sample-videos.com/audio/mp3/crowd-cheering.mp3",
+              "audioCover": "https://via.placeholder.com/400x400/FF9800/FFFFFF?text=工作听力"
+            },
+            {
+              "id": "lesson_audio_05",
+              "title": "社交对话听力",
+              "scene": "listening",
+              "duration": 35,
+              "audioUrl": "https://sample-videos.com/audio/mp3/crowd-cheering.mp3",
+              "audioCover": "https://via.placeholder.com/400x400/FF9800/FFFFFF?text=社交听力"
+            }
+          ]
         }
       ]
     },
@@ -354,6 +439,52 @@
               "scene": "art",
               "duration": 52,
               "thumbnail": "lesson_36_thumb.jpg"
+            }
+          ]
+        },
+        {
+          "id": "course_audio_03",
+          "title": "高级听力训练",
+          "type": "audio",
+          "thumbnail": "audio_course_03_thumb.jpg",
+          "lessons": [
+            {
+              "id": "lesson_audio_06",
+              "title": "新闻听力",
+              "scene": "listening",
+              "duration": 45,
+              "audioUrl": "https://sample-videos.com/audio/mp3/crowd-cheering.mp3",
+              "audioCover": "https://via.placeholder.com/400x400/9C27B0/FFFFFF?text=新闻听力"
+            },
+            {
+              "id": "lesson_audio_07",
+              "title": "演讲听力",
+              "scene": "listening",
+              "duration": 50,
+              "audioUrl": "https://sample-videos.com/audio/mp3/crowd-cheering.mp3",
+              "audioCover": "https://via.placeholder.com/400x400/9C27B0/FFFFFF?text=演讲听力"
+            }
+          ]
+        },
+        {
+          "id": "course_doc_02",
+          "title": "泰语文化阅读",
+          "type": "document",
+          "thumbnail": "doc_course_02_thumb.jpg",
+          "lessons": [
+            {
+              "id": "lesson_doc_04",
+              "title": "泰式礼仪",
+              "scene": "culture",
+              "duration": 30,
+              "documentUrl": "assets/courses/advanced/course_doc_02/lessons/lesson_doc_04/content.md"
+            },
+            {
+              "id": "lesson_doc_05",
+              "title": "佛教简介",
+              "scene": "culture",
+              "duration": 35,
+              "documentUrl": "assets/courses/advanced/course_doc_02/lessons/lesson_doc_05/content.md"
             }
           ]
         }

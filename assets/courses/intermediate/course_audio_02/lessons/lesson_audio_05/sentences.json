@@ -1,0 +1,32 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "เย็นนี้ว่างไหมครับ",
+      "translation": "今晚有空吗",
+      "wordRefs": [
+        { "word": "เย็น", "start": 0, "end": 3 },
+        { "word": "นี้", "start": 4, "end": 6 },
+        { "word": "ว่าง", "start": 7, "end": 10 },
+        { "word": "ไหม", "start": 11, "end": 14 },
+        { "word": "ครับ", "start": 15, "end": 18 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ไปกินข้าวด้วยกันไหม",
+      "translation": "一起去吃饭吗",
+      "wordRefs": [
+        { "word": "ไป", "start": 0, "end": 2 },
+        { "word": "กิน", "start": 3, "end": 6 },
+        { "word": "ข้าว", "start": 7, "end": 11 },
+        { "word": "ด้วยกัน", "start": 12, "end": 18 },
+        { "word": "ไหม", "start": 19, "end": 22 }
+      ]
+    }
+  ]
+}

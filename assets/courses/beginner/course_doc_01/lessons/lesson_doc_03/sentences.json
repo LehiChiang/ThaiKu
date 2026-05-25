@@ -1,0 +1,35 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "泰语疑问句通常以 ไหม 或 มั้ย 结尾",
+      "translation": "泰语疑问句通常以 ไหม 或 มั้ย 结尾",
+      "wordRefs": []
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "คุณสบายดีไหม",
+      "translation": "你好吗？",
+      "wordRefs": [
+        { "word": "คุณ", "start": 0, "end": 3 },
+        { "word": "สบายดี", "start": 4, "end": 10 },
+        { "word": "ไหม", "start": 11, "end": 14 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "อร่อยมั้ย",
+      "translation": "好吃吗？（口语）",
+      "wordRefs": [
+        { "word": "อร่อย", "start": 0, "end": 4 },
+        { "word": "มั้ย", "start": 5, "end": 8 }
+      ]
+    }
+  ]
+}

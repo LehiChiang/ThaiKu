@@ -1,0 +1,36 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "สวัสดีครับ วันนี้ผมจะพูดเรื่องการศึกษา",
+      "translation": "大家好，今天我要讲的是教育问题",
+      "wordRefs": [
+        { "word": "สวัสดี", "start": 0, "end": 5 },
+        { "word": "ครับ", "start": 6, "end": 9 },
+        { "word": "วันนี้", "start": 10, "end": 15 },
+        { "word": "ผม", "start": 16, "end": 18 },
+        { "word": "จะ", "start": 19, "end": 21 },
+        { "word": "พูด", "start": 22, "end": 25 },
+        { "word": "เรื่อง", "start": 26, "end": 31 },
+        { "word": "การศึกษา", "start": 32, "end": 39 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "การศึกษาเป็นพื้นฐานของการพัฒนาประเทศ",
+      "translation": "教育是国家发展的基础",
+      "wordRefs": [
+        { "word": "การศึกษา", "start": 0, "end": 7 },
+        { "word": "เป็น", "start": 8, "end": 11 },
+        { "word": "พื้นฐาน", "start": 12, "end": 18 },
+        { "word": "ของ", "start": 19, "end": 22 },
+        { "word": "การพัฒนา", "start": 23, "end": 30 },
+        { "word": "ประเทศ", "start": 31, "end": 37 }
+      ]
+    }
+  ]
+}

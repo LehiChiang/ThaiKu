@@ -1,0 +1,31 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "อันนี้ราคาเท่าไหร่ครับ",
+      "translation": "请问这个多少钱",
+      "wordRefs": [
+        { "word": "อันนี้", "start": 0, "end": 5 },
+        { "word": "ราคา", "start": 6, "end": 10 },
+        { "word": "เท่าไหร่", "start": 11, "end": 17 },
+        { "word": "ครับ", "start": 18, "end": 21 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ลดราคาได้ไหมครับ",
+      "translation": "可以便宜点吗",
+      "wordRefs": [
+        { "word": "ลด", "start": 0, "end": 2 },
+        { "word": "ราคา", "start": 3, "end": 7 },
+        { "word": "ได้", "start": 8, "end": 10 },
+        { "word": "ไหม", "start": 11, "end": 14 },
+        { "word": "ครับ", "start": 15, "end": 18 }
+      ]
+    }
+  ]
+}

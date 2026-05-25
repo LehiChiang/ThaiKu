@@ -9,13 +9,13 @@ import {
   Modal,
   Animated,
   StatusBar,
-  PanResponder,
+  Image,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
-import { Video, AVPlaybackStatus, ResizeMode } from 'expo-av';
+import { Video, AVPlaybackStatus, ResizeMode, Audio } from 'expo-av';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { RootStackParamList, Lesson, Sentence } from '../types';
+import type { RootStackParamList, Lesson, Sentence, Course } from '../types';
 import { getLessonData } from '../utils/lessonData';
 import dictionaryData from '../../assets/dictionary.json';
 import { addVocabulary } from '../database';
@@ -26,7 +26,7 @@ type LearningScreenNavigationProp = NativeStackNavigationProp<RootStackParamList
 export default function LearningScreen() {
   const navigation = useNavigation<LearningScreenNavigationProp>();
   const route = useRoute<LearningScreenRouteProp>();
-  const { lessonId, courseId, levelId, lesson } = route.params;
+  const { lessonId, courseId, levelId, lesson, course } = route.params;
 
   const [sentences, setSentences] = useState<Sentence[]>([]);
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
@@ -38,7 +38,13 @@ export default function LearningScreen() {
   const [pressedWordIndex, setPressedWordIndex] = useState<number | null>(null);
   const scaleAnim = useRef(new Animated.Value(1)).current;
 
+  // 音频播放器状态
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioPosition, setAudioPosition] = useState(0);
+  const [audioDuration, setAudioDuration] = useState(0);
+
   const videoRef = useRef<Video>(null);
+  const audioRef = useRef<Audio.Sound | null>(null);
 
   React.useEffect(() => {
     loadSentences();
@@ -67,7 +73,12 @@ export default function LearningScreen() {
     setCurrentSentenceIndex(index);
     setShowTranslation(false);
     const sentence = sentences[index];
-    videoRef.current?.setPositionAsync(sentence.startTime / 1000);
+
+    if (course.type === 'video') {
+      videoRef.current?.setPositionAsync(sentence.startTime / 1000);
+    } else if (course.type === 'audio' && audioRef.current) {
+      audioRef.current.setPositionAsync(sentence.startTime / 1000);
+    }
   };
 
   const handleWordPress = (word: string, index: number) => {
@@ -95,6 +106,61 @@ export default function LearningScreen() {
   };
 
   const currentSentence = sentences[currentSentenceIndex];
+
+  const formatTime = (millis: number) => {
+    if (!millis || !isFinite(millis)) return '0:00';
+    const totalSeconds = Math.floor(millis / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const loadAudio = async () => {
+    if (course.type !== 'audio') return;
+
+    const { sound } = await Audio.Sound.createAsync(
+      { uri: lesson.audioUrl || 'https://sample-videos.com/audio/mp3/crowd-cheering.mp3' },
+      { shouldPlay: false },
+      onAudioStatusUpdate
+    );
+    audioRef.current = sound;
+
+    sound.setOnPlaybackStatusUpdate(onAudioStatusUpdate);
+  };
+
+  const onAudioStatusUpdate = (status: any) => {
+    if (status.isLoaded) {
+      setAudioPosition(status.positionMillis);
+      setAudioDuration(status.durationMillis);
+      setIsPlaying(status.isPlaying);
+    }
+  };
+
+  const toggleAudioPlayback = async () => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      await audioRef.current.pauseAsync();
+    } else {
+      await audioRef.current.playAsync();
+    }
+  };
+
+  const seekAudio = async (position: number) => {
+    if (!audioRef.current) return;
+    await audioRef.current.setPositionAsync(position);
+  };
+
+  React.useEffect(() => {
+    if (course.type === 'audio' && !loading) {
+      loadAudio();
+    }
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.unloadAsync();
+      }
+    };
+  }, [course.type, loading]);
 
   if (loading) {
     return (
@@ -158,14 +224,53 @@ export default function LearningScreen() {
           </TouchableOpacity>
         </View>
 
-        <Video
-          ref={videoRef}
-          source={{ uri: 'https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4' }}
-          style={styles.video}
-          useNativeControls
-          resizeMode={ResizeMode.CONTAIN}
-          isLooping
-        />
+        {/* 根据课程类型渲染不同内容 */}
+        {course.type === 'video' && (
+          <Video
+            ref={videoRef}
+            source={{ uri: lesson.videoUrl || 'https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4' }}
+            style={styles.video}
+            useNativeControls
+            resizeMode={ResizeMode.CONTAIN}
+            isLooping
+          />
+        )}
+
+        {course.type === 'audio' && (
+          <View style={styles.audioContainer}>
+            <Image
+              source={{ uri: lesson.audioCover || course.thumbnail || 'https://via.placeholder.com/300x300/0066CC/FFFFFF?text=Audio' }}
+              style={styles.audioCover}
+              resizeMode="cover"
+            />
+            <View style={styles.audioControls}>
+              <TouchableOpacity
+                style={styles.playButton}
+                onPress={toggleAudioPlayback}
+              >
+                <Ionicons name={isPlaying ? 'pause' : 'play'} size={32} color="#FFFFFF" />
+              </TouchableOpacity>
+              <View style={styles.progressContainer}>
+                <Text style={styles.timeText}>{formatTime(audioPosition)}</Text>
+                <View style={styles.progressBar}>
+                  <View style={[
+                    styles.progressFill,
+                    { width: `${(audioPosition / audioDuration) * 100}%` }
+                  ]} />
+                </View>
+                <Text style={styles.timeText}>{formatTime(audioDuration)}</Text>
+              </View>
+            </View>
+          </View>
+        )}
+
+        {course.type === 'document' && (
+          <View style={styles.documentContainer}>
+            <Ionicons name="document-text-outline" size={48} color="#0066CC" />
+            <Text style={styles.documentTitle}>文档内容</Text>
+            <Text style={styles.documentDesc}>请点击下方查看完整内容</Text>
+          </View>
+        )}
 
         <ScrollView style={styles.contentContainer} showsVerticalScrollIndicator={false}>
           {currentSentence && (
@@ -429,6 +534,79 @@ const styles = StyleSheet.create({
     width: '100%',
     aspectRatio: 16 / 9,
     backgroundColor: '#000',
+  },
+  audioContainer: {
+    backgroundColor: '#000',
+    paddingVertical: 32,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+  },
+  audioCover: {
+    width: 200,
+    height: 200,
+    borderRadius: 20,
+    marginBottom: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 16,
+    elevation: 8,
+  },
+  audioControls: {
+    width: '100%',
+    alignItems: 'center',
+  },
+  playButton: {
+    width: 72,
+    height: 72,
+    borderRadius: 36,
+    backgroundColor: '#0066CC',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 24,
+    shadowColor: '#0066CC',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 12,
+    elevation: 6,
+  },
+  progressContainer: {
+    width: '100%',
+    alignItems: 'center',
+    gap: 12,
+  },
+  progressBar: {
+    width: '100%',
+    height: 6,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    backgroundColor: '#0066CC',
+  },
+  timeText: {
+    color: 'rgba(255, 255, 255, 0.8)',
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  documentContainer: {
+    backgroundColor: '#F8F9FA',
+    padding: 48,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  documentTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
+    marginTop: 16,
+  },
+  documentDesc: {
+    fontSize: 14,
+    color: '#999',
+    marginTop: 8,
   },
   contentContainer: {
     flex: 1,

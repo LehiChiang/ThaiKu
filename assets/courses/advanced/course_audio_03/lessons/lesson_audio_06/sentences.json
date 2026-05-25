@@ -1,0 +1,33 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "ข่าววันนี้ ราคาน้ำมันลดลง",
+      "translation": "今日新闻：油价下跌",
+      "wordRefs": [
+        { "word": "ข่าว", "start": 0, "end": 4 },
+        { "word": "วันนี้", "start": 5, "end": 10 },
+        { "word": "ราคา", "start": 11, "end": 15 },
+        { "word": "น้ำมัน", "start": 16, "end": 21 },
+        { "word": "ลดลง", "start": 22, "end": 26 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ตลาดหุ้นปิดที่ระดับสูงสุด",
+      "translation": "股市收于最高点",
+      "wordRefs": [
+        { "word": "ตลาด", "start": 0, "end": 4 },
+        { "word": "หุ้น", "start": 5, "end": 9 },
+        { "word": "ปิด", "start": 10, "end": 13 },
+        { "word": "ที่", "start": 14, "end": 16 },
+        { "word": "ระดับ", "start": 17, "end": 22 },
+        { "word": "สูงสุด", "start": 23, "end": 28 }
+      ]
+    }
+  ]
+}

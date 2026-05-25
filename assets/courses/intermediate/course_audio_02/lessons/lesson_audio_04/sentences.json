@@ -1,0 +1,32 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "ผมอยากสมัครงานตำแหน่งนี้ครับ",
+      "translation": "我想申请这个职位",
+      "wordRefs": [
+        { "word": "ผม", "start": 0, "end": 2 },
+        { "word": "อยาก", "start": 3, "end": 6 },
+        { "word": "สมัครงาน", "start": 7, "end": 14 },
+        { "word": "ตำแหน่ง", "start": 15, "end": 21 },
+        { "word": "นี้", "start": 22, "end": 24 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "คุณมีประสบการณ์ทำงานกี่ปี",
+      "translation": "你有几年工作经验",
+      "wordRefs": [
+        { "word": "คุณ", "start": 0, "end": 3 },
+        { "word": "มี", "start": 4, "end": 6 },
+        { "word": "ประสบการณ์", "start": 7, "end": 15 },
+        { "word": "ทำงาน", "start": 16, "end": 20 },
+        { "word": "กี่ปี", "start": 21, "end": 25 }
+      ]
+    }
+  ]
+}

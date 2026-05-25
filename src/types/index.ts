@@ -10,7 +10,7 @@ export interface Level {
 export interface Course {
   id: string;
   title: string;
-  type: 'video' | 'audio';
+  type: 'video' | 'audio' | 'document';
   thumbnail?: string;
   lessons: Lesson[];
 }
@@ -21,6 +21,10 @@ export interface Lesson {
   scene: string;
   duration: number;
   thumbnail?: string;
+  videoUrl?: string;
+  audioUrl?: string;
+  documentUrl?: string;
+  audioCover?: string;
 }
 
 export interface Sentence {
@@ -86,6 +90,7 @@ export interface RootStackParamList {
     courseId: string;
     levelId: string;
     lesson: Lesson;
+    course: Course;
   };
   FullText: { sentences: Sentence[] };
   Vocab: undefined;

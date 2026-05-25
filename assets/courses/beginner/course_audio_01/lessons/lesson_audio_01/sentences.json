@@ -1,0 +1,46 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "สวัสดีครับ คุณชื่ออะไร",
+      "translation": "你好，你叫什么名字",
+      "wordRefs": [
+        { "word": "สวัสดี", "start": 0, "end": 5 },
+        { "word": "ครับ", "start": 6, "end": 9 },
+        { "word": "คุณ", "start": 10, "end": 13 },
+        { "word": "ชื่อ", "start": 14, "end": 17 },
+        { "word": "อะไร", "start": 18, "end": 22 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ฉันชื่อมานะ ยินดีที่ได้รู้จักครับ",
+      "translation": "我叫玛纳，很高兴认识你",
+      "wordRefs": [
+        { "word": "ฉัน", "start": 0, "end": 3 },
+        { "word": "ชื่อ", "start": 4, "end": 7 },
+        { "word": "มานะ", "start": 8, "end": 12 },
+        { "word": "ยินดี", "start": 13, "end": 17 },
+        { "word": "ที่ได้", "start": 18, "end": 23 },
+        { "word": "รู้จัก", "start": 24, "end": 28 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "คุณมาจากประเทศไหน",
+      "translation": "你来自哪个国家",
+      "wordRefs": [
+        { "word": "คุณ", "start": 0, "end": 3 },
+        { "word": "มาจาก", "start": 4, "end": 9 },
+        { "word": "ประเทศ", "start": 10, "end": 16 },
+        { "word": "ไหน", "start": 17, "end": 20 }
+      ]
+    }
+  ]
+}

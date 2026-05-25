@@ -1,0 +1,32 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "泰语的基本句型结构是：主语 + 谓语 + 宾语",
+      "translation": "泰语的基本句型结构是：主语 + 谓语 + 宾语",
+      "wordRefs": []
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ฉันกินข้าว",
+      "translation": "我吃饭",
+      "wordRefs": [
+        { "word": "ฉัน", "start": 0, "end": 3 },
+        { "word": "กิน", "start": 4, "end": 7 },
+        { "word": "ข้าว", "start": 8, "end": 12 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "例句：เขาอ่านหนังสือ - 他读书",
+      "translation": "例句：เขาอ่านหนังสือ - 他读书",
+      "wordRefs": []
+    }
+  ]
+}

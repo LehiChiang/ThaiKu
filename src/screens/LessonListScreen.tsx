@@ -29,6 +29,7 @@ export default function LessonListScreen() {
         courseId: course.id,
         levelId: levelId,
         lesson: item,
+        course: course,
       })}
     >
       <View style={styles.lessonNumber}>

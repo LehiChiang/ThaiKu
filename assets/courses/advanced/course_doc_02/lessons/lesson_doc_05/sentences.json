@@ -1,0 +1,27 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "佛教是泰国的国教",
+      "translation": "佛教是泰国的国教",
+      "wordRefs": []
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ประเทศไทยมีวัดมากกว่าหมื่นแห่ง",
+      "translation": "泰国有超过一万座寺庙",
+      "wordRefs": [
+        { "word": "ประเทศไทย", "start": 0, "end": 8 },
+        { "word": "มี", "start": 9, "end": 11 },
+        { "word": "วัด", "start": 12, "end": 15 },
+        { "word": "มากกว่า", "start": 16, "end": 22 },
+        { "word": "หมื่น", "start": 23, "end": 28 },
+        { "word": "แห่ง", "start": 29, "end": 33 }
+      ]
+    }
+  ]
+}

@@ -8,7 +8,8 @@
     "moduleResolution": "node",
     "target": "esnext",
     "lib": [
-      "esnext"
+      "ESNext",
+      "DOM"
     ],
     "module": "esnext",
     "allowJs": true,
@@ -29,5 +30,4 @@
     "metro.config.js",
     "jest.config.js"
   ],
-  "extends": "expo/tsconfig.base"
 }

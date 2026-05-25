@@ -1,0 +1,32 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "สนามบินอยู่ที่ไหนครับ",
+      "translation": "请问机场在哪里",
+      "wordRefs": [
+        { "word": "สนามบิน", "start": 0, "end": 6 },
+        { "word": "อยู่", "start": 7, "end": 9 },
+        { "word": "ที่ไหน", "start": 10, "end": 15 },
+        { "word": "ครับ", "start": 16, "end": 19 }
+      ]
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ไปสนามบินต้องใช้เวลาเท่าไหร่",
+      "translation": "去机场需要多长时间",
+      "wordRefs": [
+        { "word": "ไป", "start": 0, "end": 2 },
+        { "word": "สนามบิน", "start": 3, "end": 9 },
+        { "word": "ต้อง", "start": 10, "end": 13 },
+        { "word": "ใช้", "start": 14, "end": 16 },
+        { "word": "เวลา", "start": 17, "end": 21 },
+        { "word": "เท่าไหร่", "start": 22, "end": 28 }
+      ]
+    }
+  ]
+}

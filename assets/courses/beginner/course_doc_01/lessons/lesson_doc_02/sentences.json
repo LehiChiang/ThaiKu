@@ -1,0 +1,38 @@
+{
+  "sentences": [
+    {
+      "id": "s1",
+      "startTime": 0,
+      "endTime": 4000,
+      "text": "泰语中的时态通常通过时间词或助词来表达",
+      "translation": "泰语中的时态通常通过时间词或助词来表达",
+      "wordRefs": []
+    },
+    {
+      "id": "s2",
+      "startTime": 4000,
+      "endTime": 8000,
+      "text": "ฉันจะไปตลาด",
+      "translation": "我将要去市场（将来时）",
+      "wordRefs": [
+        { "word": "ฉัน", "start": 0, "end": 3 },
+        { "word": "จะ", "start": 4, "end": 6 },
+        { "word": "ไป", "start": 7, "end": 9 },
+        { "word": "ตลาด", "start": 10, "end": 14 }
+      ]
+    },
+    {
+      "id": "s3",
+      "startTime": 8000,
+      "endTime": 12000,
+      "text": "ฉันกำลังกินข้าว",
+      "translation": "我正在吃饭（进行时）",
+      "wordRefs": [
+        { "word": "ฉัน", "start": 0, "end": 3 },
+        { "word": "กำลัง", "start": 4, "end": 9 },
+        { "word": "กิน", "start": 10, "end": 13 },
+        { "word": "ข้าว", "start": 14, "end": 18 }
+      ]
+    }
+  ]
+}

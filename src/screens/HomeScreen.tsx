@@ -90,6 +90,7 @@ export default function HomeScreen() {
                 courseId: result.course.id,
                 levelId: result.level.id,
                 lesson: result.lesson,
+                course: result.course,
             });
         }
     };

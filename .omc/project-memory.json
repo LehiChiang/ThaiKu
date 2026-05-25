@@ -103,15 +103,21 @@
   },
   "hotPaths": [
     {
+      "path": "src/screens/LearningScreen.tsx",
+      "accessCount": 46,
+      "lastAccessed": 1779503906150,
+      "type": "file"
+    },
+    {
       "path": "src/screens/VocabScreen.tsx",
       "accessCount": 40,
       "lastAccessed": 1779379488568,
       "type": "file"
     },
     {
-      "path": "src/screens/LearningScreen.tsx",
-      "accessCount": 14,
-      "lastAccessed": 1779445034751,
+      "path": "tsconfig.json",
+      "accessCount": 8,
+      "lastAccessed": 1779504113967,
       "type": "file"
     },
     {
@@ -122,26 +128,44 @@
     },
     {
       "path": "src/types/index.ts",
-      "accessCount": 3,
-      "lastAccessed": 1779444176264,
+      "accessCount": 7,
+      "lastAccessed": 1779446920828,
+      "type": "file"
+    },
+    {
+      "path": "assets/index.json",
+      "accessCount": 5,
+      "lastAccessed": 1779447234018,
       "type": "file"
     },
     {
       "path": "src/utils/lessonData.ts",
+      "accessCount": 4,
+      "lastAccessed": 1779447346520,
+      "type": "file"
+    },
+    {
+      "path": "src/screens/HomeScreen.tsx",
       "accessCount": 3,
-      "lastAccessed": 1779446492455,
+      "lastAccessed": 1779447105398,
+      "type": "file"
+    },
+    {
+      "path": "src/screens/SettingsScreen.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1779503676079,
+      "type": "file"
+    },
+    {
+      "path": "src/screens/LessonListScreen.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1779446928152,
       "type": "file"
     },
     {
       "path": "src/screens/CourseScreen.tsx",
       "accessCount": 1,
       "lastAccessed": 1779444143729,
-      "type": "file"
-    },
-    {
-      "path": "src/screens/LessonListScreen.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1779444163378,
       "type": "file"
     },
     {
@@ -178,6 +202,90 @@
       "path": "assets/courses/beginner/course_04/lessons/lesson_21/sentences.json",
       "accessCount": 1,
       "lastAccessed": 1779446440361,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_audio_01/lessons/lesson_audio_01/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447272636,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_audio_01/lessons/lesson_audio_02/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447272866,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_audio_01/lessons/lesson_audio_03/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447273059,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_doc_01/lessons/lesson_doc_01/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447273243,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_doc_01/lessons/lesson_doc_02/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447273436,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/beginner/course_doc_01/lessons/lesson_doc_03/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447273619,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/intermediate/course_audio_02/lessons/lesson_audio_04/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447311749,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/intermediate/course_audio_02/lessons/lesson_audio_05/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447311955,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/advanced/course_audio_03/lessons/lesson_audio_06/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447312157,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/advanced/course_audio_03/lessons/lesson_audio_07/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447312339,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/advanced/course_doc_02/lessons/lesson_doc_04/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447312535,
+      "type": "file"
+    },
+    {
+      "path": "assets/courses/advanced/course_doc_02/lessons/lesson_doc_05/sentences.json",
+      "accessCount": 1,
+      "lastAccessed": 1779447312722,
+      "type": "file"
+    },
+    {
+      "path": "app.json",
+      "accessCount": 1,
+      "lastAccessed": 1779448726808,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 1,
+      "lastAccessed": 1779448726861,
       "type": "file"
     }
   ],
