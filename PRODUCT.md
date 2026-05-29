@@ -3,7 +3,7 @@
 ## 1. 产品概述
 
 ### 1.1 产品愿景
-打造一个贴近真实语言使用场景的泰语学习应用，通过逐句解析真实录音和视频内容，帮助用户在沉浸式环境中自然习得泰语。
+打造一个贴近真实语言使用场景的泰语学习应用，通过逐句解析真实录音和视频内容，结合间隔重复复习算法，帮助用户在沉浸式环境中自然习得泰语。
 
 ### 1.2 目标用户
 - **全阶段学习者**：覆盖从零基础到进阶的不同水平用户
@@ -15,62 +15,89 @@
 ## 2. 核心功能模块
 
 ### 2.1 场景化逐句学习（核心差异化功能）
-- 支持**离线导入**预设的音视频学习内容包
+- 支持**内置和动态导入**音视频学习内容
 - 音视频内容按**句子级别预先拆分**
-- 以句子为单位进行学习：播放、暂停、循环
+- 以句子为单位进行学习：播放、暂停、循环、跳转
 - 句子展示：原文、翻译、音标
 - 选中句子中的单词进行**查词**
 - 显示单词的词意、用法、例句
 - 当前句子高亮，进度追踪
 
-### 2.2 词汇学习
+### 2.2 词汇学习与间隔重复
 - 单词卡片（词意、发音、例句）
-- 间隔重复算法（Spaced Repetition）辅助记忆
-- 从场景内容中提取生词本
-- 单词查词功能
+- **艾宾浩斯间隔重复算法**辅助记忆
+- 自动计算下次复习时间
+- 答对/答错机制动态调整复习间隔
+- 复习队列管理（今日到期单词）
+- 连续正确次数追踪
 
-### 2.3 会话练习
-- 场景对话库（旅游、日常、商务等）
-- 跟读练习（可选）
+### 2.3 课程管理
+- 动态课程导入（ZIP 格式）
+- 课程版本管理
+- 冲突检测与解决（覆盖/合并/跳过）
+- 支持视频、音频、文档多种类型
 
-### 2.4 语法学习
-- 语法知识点库
-- 场景内容关联语法解释（后续迭代）
+### 2.4 数据管理
+- 本地 SQLite 数据库存储
+- 学习进度持久化
+- 生词本持久化
+- 数据备份与恢复
 
 ---
 
 ## 3. 用户体验流程
 
-### 3.1 核心学习流程（离线导入模式）
+### 3.1 核心学习流程
 ```
-导入学习数据包（音视频+句子数据）
+选择等级/课程
     ↓
-选择场景/课程
+选择课时
     ↓
 播放音视频，句子级跳转
     ↓
-长按/点击句子
-    ↓
-显示句子翻译
+点击句子查看翻译
     ↓
 选中句子中的单词
     ↓
 查词显示：词意、用法、例句
     ↓
 添加到生词本
+    ↓
+自动计算复习时间（5分钟后）
 ```
 
-### 3.2 单词复习流程
+### 3.2 间隔重复复习流程
 ```
 打开生词本
     ↓
-基于间隔算法的复习队列
+显示今日到期复习单词
     ↓
 词卡翻转测试
     ↓
-标记掌握程度（简单/困难/不认识）
+标记掌握程度（认识/不认识）
+    ↓
+    ├─ 认识：推进到下一阶段，延长间隔
+    │   └─ 连续答对累加
+    └─ 不认识：重置到第一阶段，缩短间隔
     ↓
 更新下次复习时间
+```
+
+### 3.3 动态课程导入流程
+```
+打开设置 → 导入课程
+    ↓
+选择 ZIP 课程包
+    ↓
+验证课程包格式
+    ↓
+检测课程冲突
+    ↓
+选择处理策略（覆盖/合并/跳过）
+    ↓
+解压并保存课程数据
+    ↓
+更新课程索引
 ```
 
 ---
@@ -78,34 +105,66 @@
 ## 4. 技术方案
 
 ### 4.1 技术栈
-- **跨平台框架**：React Native
-- **开发语言**：TypeScript
-- **状态管理**：待定（Redux Toolkit / Zustand / React Context）
-- **UI 组件库**：待定（React Native Paper / NativeBase / 自定义）
+| 技术 | 版本 | 说明 |
+|------|------|------|
+| **框架** | Expo ~54.0.0 | 跨平台开发框架 |
+| **核心** | React Native ~0.81.5 | 原生组件库 |
+| **语言** | TypeScript ~5.9.3 | 类型安全 |
+| **导航** | React Navigation v6 | 路由管理 |
+| **UI** | React Native Paper v5 | MD3 设计规范 |
+| **数据库** | expo-sqlite ~16.0.10 | 本地数据库 |
+| **视频** | expo-video ~3.0.16 | 视频播放 |
+| **音频** | expo-audio ~1.1.1 | 音频播放 |
+| **文件系统** | expo-file-system ~19.0.22 | 文件操作 |
+| **ZIP** | jszip ^3.10.1 | 压缩包处理 |
 
 ### 4.2 数据策略
 - **完全离线**：所有数据打包在应用内或用户导入，无需联网
-- **资源包类型**：
+- **混合存储**：
   - **内置资源包**：预置在应用 assets 中，随应用打包
-  - **用户资源包**：用户导入的额外学习包，可导出备份
+  - **动态资源包**：用户导入的额外学习包，存储在文档目录
 - **数据持久化**：
-  - 学习进度：本地数据库存储
-  - 生词本：本地数据库存储
-  - 用户数据：支持导出/导入备份
+  - 学习进度：本地 SQLite 数据库
+  - 生词本：本地 SQLite 数据库（含间隔重复数据）
+  - 课程版本：本地 SQLite 数据库
 - **导入导出**：
-  - 资源包：支持从文件系统导入，导出为标准格式
-  - 用户数据：支持一键导出备份，恢复导入
+  - 课程包：ZIP 格式导入
+  - 用户数据：JSON 格式备份/恢复
 
-### 4.3 关键技术点
+### 4.3 艾宾浩斯间隔算法
+
+基于艾宾浩斯遗忘曲线的复习间隔设计：
+
+```typescript
+// 复习间隔（分钟）
+const EBBINGHAUS_INTERVALS = [
+  5,      // 5分钟  (第1阶段)
+  30,     // 30分钟 (第2阶段)
+  720,    // 12小时 (第3阶段)
+  1440,   // 24小时 (第4阶段)
+  2880,   // 2天    (第5阶段)
+  5760,   // 4天    (第6阶段)
+  10080,  // 7天    (第7阶段)
+  21600   // 15天   (第8阶段)
+];
+```
+
+**更新规则**：
+- 答对：推进到下一阶段（最大8阶段），间隔时间延长
+- 答错：重置到第1阶段，间隔时间回到5分钟
+- 连续答对次数影响复习进度（但主要靠答对次数推进）
+
+### 4.4 关键技术点
 | 技术点 | 说明 | 技术方案 |
 |--------|------|----------|
-| 视频播放 | 流畅播放+句子跳转 | react-native-video |
+| 视频播放 | 流畅播放+句子跳转 | expo-video |
+| 音频播放 | 音频课程支持 | expo-audio |
 | 文本选择 | 单词选中查词 | 自定义文本选择组件 |
 | JSON解析 | 资源包数据解析 | 标准 JSON 解析 |
 | 本地存储 | 生词本、进度存储 | SQLite |
-| 文件操作 | 资源包导入导出 | react-native-fs |
-| 资源管理 | 内置资源包加载 | React Native Assets Bundle |
-| 用户数据 | 数据备份恢复 | ZIP 打包 + 文件选择器 |
+| 文件操作 | 资源包导入导出 | expo-file-system + jszip |
+| 课程管理 | 动态课程加载 | 文档目录 + 缓存机制 |
+| 备份恢复 | 数据备份恢复 | JSON 导出/导入 |
 
 ---
 
@@ -115,42 +174,16 @@
 学习数据包采用层级结构：等级 → 课程 → 节数（场景）
 
 ```
-assets/
+assets/ (内置) 或 courses/ (动态)
 ├── dictionary.json                # 全局共享词典
 ├── index.json                     # 整体索引
 └── courses/                       # 课程数据
-    ├── beginner/                  # 初级
-    │   ├── course_01/             # 课程1（视频课程）
-    │   │   ├── meta.json          # 课程元数据
-    │   │   ├── thumbnail.jpg
-    │   │   └── lessons/
-    │   │       ├── lesson_01/    # 第1节 - 场景：生活
-    │   │       │   ├── meta.json
-    │   │       │   ├── sentences.json
-    │   │       │   ├── thumbnail.jpg
-    │   │       │   └── media/
-    │   │       │       └── life_scenario.mp4
-    │   │       ├── lesson_02/    # 第2节 - 场景：旅行
-    │   │       │   ├── meta.json
-    │   │       │   ├── sentences.json
-    │   │       │   └── media/
-    │   │       │       └── travel_scenario.mp4
-    │   │       └── lesson_03/    # 第3节 - 场景：购物
-    │   └── course_02/             # 课程2（音频课程）
-    │       ├── meta.json
-    │       ├── thumbnail.jpg
-    │       └── lessons/
-    │           ├── lesson_01/    # 第1节 - 场景：娱乐
-    │           │   ├── meta.json
-    │           │   ├── sentences.json
-    │           │   └── media/
-    │           │       └── entertainment.mp3
-    ├── intermediate/              # 中级
-    │   ├── course_01/
-    │   └── course_02/
-    └── advanced/                  # 高级
-        ├── course_01/
-        └── course_02/
+    └── {level_id}/                # 等级目录
+        └── {course_id}/           # 课程目录
+            └── lessons/           # 课时目录
+                └── {lesson_id}/   # 课时目录
+                    ├── meta.json  # 课时元数据
+                    └── sentences.json  # 句子数据
 ```
 
 ### 5.2 整体索引（index.json）
@@ -167,72 +200,26 @@ assets/
           "id": "course_01",
           "title": "日常会话入门",
           "type": "video",
-          "thumbnail": "beginner_course_01_thumb.jpg",
+          "version": "1.0",
+          "thumbnail": "thumbnail.jpg",
           "lessons": [
             {
               "id": "lesson_01",
               "title": "日常生活场景",
               "scene": "life",
               "duration": 45,
-              "thumbnail": "life_scenario_thumb.jpg"
-            },
-            {
-              "id": "lesson_02",
-              "title": "旅行场景",
-              "scene": "travel",
-              "duration": 50,
-              "thumbnail": "travel_scenario_thumb.jpg"
-            }
-          ]
-        },
-        {
-          "id": "course_02",
-          "title": "基础听力训练",
-          "type": "audio",
-          "thumbnail": "beginner_course_02_thumb.jpg",
-          "lessons": [
-            {
-              "id": "lesson_01",
-              "title": "娱乐场景",
-              "scene": "entertainment",
-              "duration": 30,
-              "thumbnail": "entertainment_scenario_thumb.jpg"
+              "thumbnail": "life_scenario_thumb.jpg",
+              "videoUrl": "life_scenario.mp4"
             }
           ]
         }
       ]
-    },
-    {
-      "id": "intermediate",
-      "title": "中级",
-      "description": "适合有一定基础的学习者",
-      "courses": []
-    },
-    {
-      "id": "advanced",
-      "title": "高级",
-      "description": "适合进阶学习者",
-      "courses": []
     }
   ]
 }
 ```
 
-### 5.3 课程元数据（courses/beginner/course_01/meta.json）
-```json
-{
-  "id": "course_01",
-  "title": "日常会话入门",
-  "description": "学习泰语基础会话，涵盖日常生活常用场景",
-  "level": "beginner",
-  "type": "video",
-  "totalDuration": 95,
-  "thumbnail": "thumbnail.jpg",
-  "tags": ["日常", "入门", "会话"]
-}
-```
-
-### 5.4 节元数据（courses/beginner/course_01/lessons/lesson_01/meta.json）
+### 5.3 课时元数据（meta.json）
 ```json
 {
   "id": "lesson_01",
@@ -243,12 +230,11 @@ assets/
   "mediaFile": "life_scenario.mp4",
   "mediaType": "video",
   "duration": 45,
-  "thumbnail": "thumbnail.jpg",
-  "tags": ["生活", "日常"]
+  "thumbnail": "thumbnail.jpg"
 }
 ```
 
-### 5.5 句子数据格式（sentences.json）
+### 5.4 句子数据格式（sentences.json）
 ```json
 {
   "lessonId": "lesson_01",
@@ -271,7 +257,7 @@ assets/
 }
 ```
 
-### 5.6 全局词典格式（dictionary.json）
+### 5.5 全局词典格式（dictionary.json）
 ```json
 {
   "version": "1.0",
@@ -288,87 +274,32 @@ assets/
           "translation": "你好"
         }
       ]
-    },
-    "ครับ": {
-      "pronunciation": "khrap",
-      "meaning": "（男性礼貌语气词）",
-      "partOfSpeech": "particle",
-      "usage": "男性在句尾使用的礼貌助词，表示尊敬",
-      "examples": [
-        {
-          "sceneId": "scene_greeting",
-          "sentence": "สวัสดีครับ",
-          "translation": "你好"
-        },
-        {
-          "sceneId": "scene_order_food",
-          "sentence": "ขอบคุณครับ",
-          "translation": "谢谢"
-        }
-      ]
     }
   }
 }
 ```
 
-### 5.7 场景分类说明
+### 5.6 课程包 ZIP 格式
 
-| 场景分类 | 说明 | 示例标签 |
-|---------|------|----------|
-| life | 生活场景 | 生活、日常、家庭 |
-| travel | 旅行场景 | 旅行、交通、问路 |
-| entertainment | 娱乐场景 | 娱乐、电影、音乐 |
-| shopping | 购物场景 | 购物、市场、讨价还价 |
-| food | 美食场景 | 点餐、美食、菜单 |
-| work | 工作场景 | 工作、会议、商务 |
-
-### 5.8 资源包文件格式
-资源包以 ZIP 压缩包形式导入导出：
-
+导入包结构：
 ```
-thai_ku_package.zip
-├── manifest.json          # 资源包清单
-├── dictionary.json        # 词典数据（可选，若无则使用全局词典）
-├── courses/               # 课程数据
-│   └── beginner/
-│       └── course_01/
-│           ├── meta.json
-│           ├── thumbnail.jpg
-│           └── lessons/
-│               └── lesson_01/
-│                   ├── meta.json
-│                   ├── sentences.json
-│                   └── media/
-│                       └── life_scenario.mp4
-└── assets/                # 公共资源（缩略图等）
+course_package.zip
+├── index.json              # 课程索引
+└── courses/
+    └── {level_id}/
+        └── {course_id}/
+            └── lessons/
+                └── {lesson_id}/
+                    ├── meta.json       # 课时元数据
+                    └── sentences.json   # 句子数据
 ```
 
-**manifest.json** 格式：
-```json
-{
-  "version": "1.0",
-  "packageId": "custom_001",
-  "title": "自定义课程包",
-  "description": "用户自定义的学习内容",
-  "author": "用户名",
-  "createdAt": "2026-05-20T10:00:00Z",
-  "courses": [
-    {
-      "levelId": "beginner",
-      "courseId": "course_01",
-      "lessonCount": 3
-    }
-  ]
-}
-```
-
-### 5.9 媒体规格
+### 5.7 媒体规格
 - **视频格式**: H.264
 - **分辨率**: 720p (1280x720)
 - **音频**: AAC, 44.1kHz, 立体声
 - **容器格式**: MP4（视频）、MP3（音频）
 - **缩略图**: JPG, 300x200
-- **ZIP压缩**: Deflate 压缩
 
 ---
 
@@ -380,100 +311,121 @@ thai_ku_package.zip
 ```
 应用沙盒/
 ├── Documents/
-│   ├── user_packages/        # 用户导入的资源包
-│   │   ├── package_001/      # 解压后的资源包
-│   │   └── package_002/
-│   ├── dictionary_user.json  # 用户自定义词典（可选）
-│   └── backup/               # 备份目录
+│   ├── courses/              # 动态课程数据
+│   │   └── index.json        # 课程索引
+│   └── thaiku.db            # SQLite 数据库
 └── Library/
-    └── thaidb.sqlite        # SQLite 数据库
+    └── (缓存等)
 ```
 
 ### 6.2 SQLite 数据库表结构
 
-**学习进度表（learning_progress）**：
+#### 学习进度表（learning_progress）
 | 字段 | 类型 | 说明 |
 |------|------|------|
 | id | INTEGER | 主键 |
-| lessonId | TEXT | 节ID |
+| lessonId | TEXT | 节ID (UNIQUE) |
 | levelId | TEXT | 等级ID |
 | courseId | TEXT | 课程ID |
 | currentSentenceIndex | INTEGER | 当前句子索引 |
-| completed | BOOLEAN | 是否完成 |
-| lastStudyTime | TIMESTAMP | 最后学习时间 |
+| completed | INTEGER | 是否完成 (0/1) |
+| lastStudyTime | TEXT | 最后学习时间 (ISO 8601) |
 | totalTimeSpent | INTEGER | 总学习时长（秒） |
 
-**生词本表（vocabulary）**：
+#### 生词本表（vocabulary）
 | 字段 | 类型 | 说明 |
 |------|------|------|
 | id | INTEGER | 主键 |
 | word | TEXT | 单词 |
 | lessonId | TEXT | 来源节ID |
-| addedAt | TIMESTAMP | 添加时间 |
-| lastReviewTime | TIMESTAMP | 最后复习时间 |
+| addedAt | TEXT | 添加时间 (ISO 8601) |
+| lastReviewTime | TEXT | 最后复习时间 (ISO 8601) |
+| nextReviewAt | TEXT | 下次复习时间 (ISO 8601) |
+| reviewInterval | INTEGER | 复习间隔（分钟） |
+| reviewStage | INTEGER | 当前复习阶段（1-8） |
+| correctStreak | INTEGER | 连续正确次数 |
 | reviewCount | INTEGER | 复习次数 |
 | masteryLevel | INTEGER | 掌握程度（0-5） |
+| UNIQUE | - | (word, lessonId) |
+
+#### 课程版本表（course_versions）
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| levelId | TEXT | 等级ID |
+| courseId | TEXT | 课程ID |
+| version | TEXT | 版本号 |
+| updatedAt | TEXT | 更新时间 (ISO 8601) |
+| PRIMARY KEY | - | (levelId, courseId) |
 
 ### 6.3 数据备份与恢复
 
 **导出备份**：
-- 将 SQLite 数据库导出为 JSON
-- 将用户资源包打包为 ZIP
-- 生成备份文件：`thaiku_backup_YYYYMMDD.zip`
+- 将 SQLite 数据库表导出为 JSON
+- 生成备份文件：`thaiku_backup_YYYYMMDD.json`
 
-**备份文件结构**：
+**备份文件格式**：
+```json
+{
+  "version": "1.0",
+  "exportedAt": "2026-05-29T00:00:00Z",
+  "learningProgress": [...],
+  "vocabulary": [...]
+}
 ```
-thaiku_backup_20260520.zip
-├── backup.json              # 备份元信息
-├── data.json                # 用户学习数据
-├── user_packages/           # 用户资源包
-│   ├── package_001/
-│   └── package_002/
-└── custom_dictionary.json   # 用户自定义词典
-```
-
-**恢复导入**：
-- 验证备份文件完整性
-- 合并或覆盖现有数据
-- 保留原数据作为冲突备份
 
 ---
 
-## 7. MVP 阶段功能范围
+## 7. 页面结构
 
-### 7.1 MVP 核心功能（第一版）
-- ✅ 加载内置资源包（视频/音频）
+### 7.1 页面列表
+
+| 页面 | 路由 | 说明 |
+|------|------|------|
+| HomeScreen | Home | 首页，展示等级列表 |
+| CourseScreen | Course | 课程详情页 |
+| LessonListScreen | LessonList | 课程课时列表 |
+| LearningScreen | Learning | 学习播放页 |
+| FullTextScreen | FullText | 全文查看页 |
+| VocabScreen | Vocab | 生词本（含复习） |
+| SettingsScreen | Settings | 设置页 |
+
+### 7.2 导航结构
+
+```
+Home (首页)
+  └─ Course (课程详情)
+      └─ LessonList (课时列表)
+          └─ Learning (学习播放)
+              └─ FullText (全文查看)
+Vocab (生词本)
+Settings (设置)
+```
+
+---
+
+## 8. 功能范围
+
+### 8.1 已实现功能
+- ✅ 内置资源包加载（视频/音频）
+- ✅ 动态课程导入（ZIP 格式）
+- ✅ 课程版本管理与冲突检测
 - ✅ 句子级播放控制（上一句/下一句/循环）
 - ✅ 句子原文 + 翻译展示
 - ✅ 选中句子中的单词查词
 - ✅ 单词详情：词意、用法、例句
 - ✅ 生词本功能（添加、删除、查看）
+- ✅ 间隔重复复习算法
 - ✅ 学习进度自动保存
 - ✅ 数据备份导出
 - ✅ 数据恢复导入
+- ✅ 全文查看功能
 
-### 7.2 MVP 暂不包含
-- ❌ 外部资源包导入（第一版只支持内置+备份恢复）
-- ❌ 用户上传/编辑音视频内容
-- ❌ 语音识别和跟读反馈
-- ❌ 间隔重复算法（手动复习）
-- ❌ 云同步功能
-- ❌ 社交功能
-- ❌ 游戏化元素
-
----
-
-## 8. 后续迭代方向
-
-### 8.1 第二版
-- 外部资源包导入能力
-- 间隔重复算法
-- 语法知识库扩展
-
-### 8.2 第三版
-- 语音识别跟读反馈
+### 8.2 后续迭代方向
+- 语音识别和跟读反馈
 - 学习路径推荐
 - 社区内容分享
+- 游戏化元素
+- 云同步功能
 
 ---
 
@@ -484,6 +436,7 @@ thaiku_backup_20260520.zip
 - 单词查询响应时间
 - 生词本添加次数
 - 平均学习时长
+- 复习完成率
 - 备份/恢复成功率
 
 ### 9.2 技术指标
@@ -496,71 +449,12 @@ thaiku_backup_20260520.zip
 
 ---
 
-## 10. 风险与挑战
-
-| 风险 | 影响 | 应对策略 |
-|------|------|----------|
-| 资源包制作成本高 | 内容获取困难 | 建立标准化工具，简化制作流程 |
-| 应用包体积过大 | 下载/安装困难 | MVP 只包含示例内容，提供精简版 |
-| 设备存储空间不足 | 影响用户体验 | 支持删除已学内容，提醒存储空间 |
-| 泰语分词准确性 | 查词体验差 | 预处理资源包，手动标注单词边界 |
-| 数据备份失败 | 用户数据丢失 | 备份前验证，失败时提示原因 |
-| 跨版本兼容性 | 备份无法恢复 | 备份文件包含版本号，提供迁移方案 |
-
----
-
-## 11. 项目结构规划
-
-```
-ThaiKu/
-├── src/
-│   ├── components/           # 公共组件
-│   │   ├── SentencePlayer/   # 句子播放器
-│   │   ├── WordPopup/        # 单词查词弹窗
-│   │   ├── VocabCard/        # 生词卡片
-│   │   └── ProgressBar/      # 进度条
-│   ├── screens/              # 页面组件
-│   │   ├── HomeScreen/       # 首页（等级/课程列表）
-│   │   ├── CourseScreen/     # 课程详情（节列表）
-│   │   ├── LearningScreen/   # 学习播放页面
-│   │   ├── VocabScreen/      # 生词本页面
-│   │   └── SettingsScreen/   # 设置页面（备份/恢复）
-│   ├── navigation/           # 导航配置
-│   ├── database/             # SQLite 数据库
-│   │   ├── schema.ts         # 数据库表结构
-│   │   └── index.ts          # 数据库操作
-│   ├── storage/              # 文件系统操作
-│   │   ├── packageLoader.ts  # 资源包加载
-│   │   ├── backupManager.ts  # 备份管理
-│   │   └── filePicker.ts     # 文件选择器
-│   ├── store/                # 状态管理
-│   ├── utils/                # 工具函数
-│   │   ├── timeFormat.ts     # 时间格式化
-│   │   └── zipUtil.ts        # ZIP 压缩/解压
-│   ├── constants/            # 常量定义
-│   └── types/                # TypeScript类型
-├── assets/                   # 内置资源包
-│   ├── index.json
-│   ├── dictionary.json
-│   └── courses/
-│       └── beginner/
-├── android/
-├── ios/
-├── package.json
-└── README.md
-```
-
----
-
-**文档版本**: v1.5
+**文档版本**: v2.0
 **创建日期**: 2026/05/20
-**更新日期**: 2026/05/20
-**状态**: 待确认
+**更新日期**: 2026/05/29
+**状态**: 当前
 
 ### 更新记录
-- v1.5 (2026/05/20): 新增数据持久化、备份导入导出方案，更新技术栈
-- v1.4 (2026/05/20): 调整为层级结构（等级→课程→节），支持视频/音频课程类型
-- v1.3 (2026/05/20): 调整为全局词典结构，统一管理所有单词数据
-- v1.2 (2026/05/20): 调整为完全离线模式，资源包集成在应用内
-- v1.1 (2026/05/20): 调整为离线导入模式，新增数据格式说明，移除泰语字母表
+- v2.0 (2026/05/29): 更新技术栈、新增间隔重复复习、动态课程导入、课程版本管理
+- v1.5 (2026/05/20): 新增数据持久化、备份导入导出方案
 - v1.0 (2026/05/20): 初始版本

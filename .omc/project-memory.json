@@ -122,14 +122,14 @@
     },
     {
       "path": "src/utils/courseImporter.ts",
-      "accessCount": 29,
-      "lastAccessed": 1780021831984,
+      "accessCount": 30,
+      "lastAccessed": 1780036583932,
       "type": "file"
     },
     {
       "path": "src/database/index.ts",
-      "accessCount": 12,
-      "lastAccessed": 1779965629859,
+      "accessCount": 13,
+      "lastAccessed": 1780036568812,
       "type": "file"
     },
     {
@@ -140,8 +140,8 @@
     },
     {
       "path": "src/types/index.ts",
-      "accessCount": 10,
-      "lastAccessed": 1779961169755,
+      "accessCount": 11,
+      "lastAccessed": 1780036568781,
       "type": "file"
     },
     {
@@ -157,21 +157,21 @@
       "type": "file"
     },
     {
-      "path": "src/utils/lessonData.ts",
-      "accessCount": 6,
-      "lastAccessed": 1779960177421,
-      "type": "file"
-    },
-    {
       "path": "package.json",
-      "accessCount": 6,
-      "lastAccessed": 1779965898674,
+      "accessCount": 7,
+      "lastAccessed": 1780036568800,
       "type": "file"
     },
     {
       "path": "src/utils/courseDataManager.ts",
+      "accessCount": 7,
+      "lastAccessed": 1780036584043,
+      "type": "file"
+    },
+    {
+      "path": "src/utils/lessonData.ts",
       "accessCount": 6,
-      "lastAccessed": 1780021552491,
+      "lastAccessed": 1779960177421,
       "type": "file"
     },
     {
@@ -208,6 +208,36 @@
       "path": "src/screens/FullTextScreen.tsx",
       "accessCount": 2,
       "lastAccessed": 1779961205543,
+      "type": "file"
+    },
+    {
+      "path": "App.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1780036568754,
+      "type": "file"
+    },
+    {
+      "path": "src/constants/theme.ts",
+      "accessCount": 2,
+      "lastAccessed": 1780036583988,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 2,
+      "lastAccessed": 1780040397251,
+      "type": "file"
+    },
+    {
+      "path": "PRODUCT.md",
+      "accessCount": 2,
+      "lastAccessed": 1780040546854,
+      "type": "file"
+    },
+    {
+      "path": "UI_DESIGN.md",
+      "accessCount": 2,
+      "lastAccessed": 1780040655364,
       "type": "file"
     },
     {
@@ -316,18 +346,6 @@
       "path": "assets/courses/beginner/course_01/lessons/lesson_01/meta.json",
       "accessCount": 1,
       "lastAccessed": 1779959821819,
-      "type": "file"
-    },
-    {
-      "path": "App.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1779961133865,
-      "type": "file"
-    },
-    {
-      "path": "src/constants/theme.ts",
-      "accessCount": 1,
-      "lastAccessed": 1779961156446,
       "type": "file"
     }
   ],
