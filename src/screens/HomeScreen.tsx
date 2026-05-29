@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {
     View,
     Text,
@@ -9,10 +9,10 @@ import {
     StatusBar,
 } from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useFocusEffect} from '@react-navigation/native';
 import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import type {RootStackParamList, Level, Course, Lesson} from '../types';
-import indexData from '../../assets/index.json';
+import {loadCourseIndex, initCoursesDirectory, refreshCourseIndex} from '../utils/courseDataManager';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
 
@@ -46,12 +46,21 @@ export default function HomeScreen() {
         loadContent();
     }, []);
 
+    // 页面获得焦点时刷新数据
+    useFocusEffect(
+        useCallback(() => {
+            loadContent();
+        }, [])
+    );
+
     useEffect(() => {
         performSearch();
     }, [searchText, levels]);
 
-    const loadContent = () => {
-        setLevels((indexData as any).levels || []);
+    const loadContent = async () => {
+        await initCoursesDirectory();
+        const data = await loadCourseIndex();
+        setLevels(data || []);
         setLoading(false);
     };
 

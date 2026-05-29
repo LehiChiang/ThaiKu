@@ -64,6 +64,17 @@ export const initDatabase = async (): Promise<void> => {
       WHERE nextReviewAt IS NULL
     `);
 
+    // 创建课程版本表
+    await db.execAsync(`
+      CREATE TABLE IF NOT EXISTS course_versions (
+        levelId TEXT NOT NULL,
+        courseId TEXT NOT NULL,
+        version TEXT,
+        updatedAt TEXT,
+        PRIMARY KEY (levelId, courseId)
+      );
+    `);
+
     console.log('Database initialized successfully');
   } catch (error) {
     console.error('Failed to initialize database:', error);
@@ -248,4 +259,41 @@ export const exportDatabase = async (): Promise<string> => {
     learningProgress: progress,
     vocabulary: vocabulary,
   }, null, 2);
+};
+
+// 课程版本管理
+export const saveCourseVersion = async (levelId: string, courseId: string, version: string): Promise<void> => {
+  if (!db) await initDatabase();
+
+  const now = new Date().toISOString();
+  await db!.runAsync(
+    `INSERT INTO course_versions (levelId, courseId, version, updatedAt)
+     VALUES (?, ?, ?, ?)
+     ON CONFLICT(levelId, courseId) DO UPDATE SET
+       version = excluded.version,
+       updatedAt = excluded.updatedAt`,
+    [levelId, courseId, version, now]
+  );
+};
+
+export const getCourseVersion = async (levelId: string, courseId: string): Promise<string | null> => {
+  if (!db) await initDatabase();
+
+  const result = await db!.getFirstAsync<any>(
+    'SELECT version FROM course_versions WHERE levelId = ? AND courseId = ?',
+    [levelId, courseId]
+  );
+
+  return result?.version || null;
+};
+
+export const isCourseUpdate = async (levelId: string, courseId: string, newVersion: string): Promise<boolean> => {
+  const currentVersion = await getCourseVersion(levelId, courseId);
+
+  if (!currentVersion) {
+    return false; // 新课程，不是更新
+  }
+
+  // 简单版本比较
+  return currentVersion !== newVersion;
 };

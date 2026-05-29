@@ -16,7 +16,7 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { Video, AVPlaybackStatus, ResizeMode, Audio } from 'expo-av';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList, Lesson, Sentence, Course } from '../types';
-import { getLessonData } from '../utils/lessonData';
+import { loadLessonData } from '../utils/courseDataManager';
 import dictionaryData from '../../assets/dictionary.json';
 import { addVocabulary } from '../database';
 
@@ -52,9 +52,9 @@ export default function LearningScreen() {
 
   const loadSentences = async () => {
     try {
-      const lessonModule = getLessonData(lessonId);
-      if (lessonModule && lessonModule.sentences) {
-        setSentences(lessonModule.sentences);
+      const lessonData = await loadLessonData(lessonId);
+      if (lessonData && lessonData.sentences) {
+        setSentences(lessonData.sentences);
         setLoading(false);
       } else {
         console.error(`Lesson data not found: ${lessonId}`);

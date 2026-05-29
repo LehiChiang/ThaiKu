@@ -23,7 +23,11 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0066CC"
       },
-      "package": "com.thaiku.app"
+      "package": "com.thaiku.app",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -32,6 +36,11 @@
       "expo-sqlite",
       "expo-audio",
       "expo-video"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1718e4ba-79d8-40a5-8359-3f3aa4bf9c49"
+      }
+    }
   }
 }
